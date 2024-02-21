@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises.iml" filepath="$PROJECT_DIR$/Week1-Exercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/arithmeticOperationPriority/arithmeticOperationPriority.iml" filepath="$PROJECT_DIR$/arithmeticOperationPriority/arithmeticOperationPriority.iml" />
+      <module fileurl="file://$PROJECT_DIR$/b/b.iml" filepath="$PROJECT_DIR$/b/b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bodyMassIndex/bodyMassIndex.iml" filepath="$PROJECT_DIR$/bodyMassIndex/bodyMassIndex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/chineseZodiaq/chineseZodiaq.iml" filepath="$PROJECT_DIR$/chineseZodiaq/chineseZodiaq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/flightTicketCalculator/flightTicketCalculator.iml" filepath="$PROJECT_DIR$/flightTicketCalculator/flightTicketCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/greengrocer/greengrocer.iml" filepath="$PROJECT_DIR$/greengrocer/greengrocer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taksimeter/taksimeter.iml" filepath="$PROJECT_DIR$/taksimeter/taksimeter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vatCalculator/vatCalculator.iml" filepath="$PROJECT_DIR$/vatCalculator/vatCalculator.iml" />
+    </modules>
+  </component>
+</project>
