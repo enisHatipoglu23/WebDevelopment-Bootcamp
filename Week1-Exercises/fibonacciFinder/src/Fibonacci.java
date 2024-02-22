@@ -8,12 +8,6 @@ public class Fibonacci {
         // sayı isteniyor.
         num = scan.nextInt();
         // hesaplama yapılıyor.
-//        for (int i = 0; i < num; i++) {
-//            System.out.print(first + " "); // 0 1 1 2 3
-//            nextN = first + second; // 1
-//            first = second; // 1
-//            second = nextN; // 1
-//        }
         int i = 0;
         while(i<num){
             System.out.print(first + " ");
