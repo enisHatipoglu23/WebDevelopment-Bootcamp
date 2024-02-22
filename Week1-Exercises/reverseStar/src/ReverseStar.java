@@ -5,7 +5,7 @@ public class ReverseStar {
     void func(){
         System.out.println("Enter size: ");
         size = scan.nextInt();
-        // İlk satırda 10 yıldız olduğundan 10 ile başlayıp giderek azalan bir for döngüsü kurdum.
+        // İlk satırda size değişkeni kadar yıldız olduğundan size ile başlayıp giderek azalan bir for döngüsü kurdum.
         for (int i = 1; i <= size; i++) {
             // Yıldızların birer birer azalması için j>=i eşitliğini kurdum.
             for (int j = size; j >=i ; j--) {
