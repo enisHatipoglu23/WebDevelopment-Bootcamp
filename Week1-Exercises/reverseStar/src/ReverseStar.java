@@ -7,11 +7,11 @@ public class ReverseStar {
         size = scan.nextInt();
         // İlk satırda 10 yıldız olduğundan 10 ile başlayıp giderek azalan bir for döngüsü kurdum.
         for (int i = 1; i <= size; i++) {
-            System.out.println();
             // Yıldızların birer birer azalması için j>=i eşitliğini kurdum.
             for (int j = size; j >=i ; j--) {
                 System.out.print("*");
             }
+            System.out.println();
         }
     }
 }
