@@ -2,24 +2,17 @@ import java.util.Scanner;
 
 public class Fibonacci {
     Scanner scan = new Scanner(System.in);
-    int num;
+    int num, first=0, second=1, nextN;
     void func(){
         System.out.print("Enter a num: ");
         // sayı isteniyor.
         num = scan.nextInt();
-        // array tanımlanıyor.
-        int[] arr = new int[num];
-        arr[0] = 0;
-        arr[1] = 1;
-        int i = 2;
-        while(i < num){
-            // fibonacci formülü.
-            arr[i] = arr[i-1] + arr[i-2];
-            i++;
-        }
-        // array ekrana bastırlılıyor.
-        for (int j = 0; j < num; j++) {
-            System.out.print(arr[j] + " ");
+        // hesaplama yapılıyor.
+        for (int i = 0; i < num; i++) {
+            System.out.print(first + " "); // 0 1 1 2 3
+            nextN = first + second; // 1
+            first = second; // 1
+            second = nextN; // 1
         }
     }
 }
