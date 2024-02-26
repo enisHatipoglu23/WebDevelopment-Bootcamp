@@ -6,14 +6,8 @@ public class Main {
 
     // calculation method.
     static int power(int a, int b){
-        int result;
-        if(b == 0){
-            result = 1;
-        }else{
-            result = a * power(a, b-1);
-        }
-        return result;
-
+        if (b == 0) return 1;
+        return a * power(a, b-1);
     }
     // main method
     public static void main(String[] args){
