@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/WebDeveloper-Bootcamp.iml" filepath="$PROJECT_DIR$/.idea/WebDeveloper-Bootcamp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/Week1-Exercises.iml" filepath="$PROJECT_DIR$/Week1-Exercises/Week1-Exercises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/arithmeticOperationPriority/arithmeticOperationPriority.iml" filepath="$PROJECT_DIR$/Week1-Exercises/arithmeticOperationPriority/arithmeticOperationPriority.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/awesomeNumber/awesomeNumber.iml" filepath="$PROJECT_DIR$/Week1-Exercises/awesomeNumber/awesomeNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/b/b.iml" filepath="$PROJECT_DIR$/Week1-Exercises/b/b.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/bodyMassIndex/bodyMassIndex.iml" filepath="$PROJECT_DIR$/Week1-Exercises/bodyMassIndex/bodyMassIndex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week2-Execises/byPattern/byPattern.iml" filepath="$PROJECT_DIR$/Week2-Execises/byPattern/byPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/chineseZodiaq/chineseZodiaq.iml" filepath="$PROJECT_DIR$/Week1-Exercises/chineseZodiaq/chineseZodiaq.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/fibonacciFinder/fibonacciFinder.iml" filepath="$PROJECT_DIR$/Week1-Exercises/fibonacciFinder/fibonacciFinder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/flightTicketCalculator/flightTicketCalculator.iml" filepath="$PROJECT_DIR$/Week1-Exercises/flightTicketCalculator/flightTicketCalculator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/greengrocer/greengrocer.iml" filepath="$PROJECT_DIR$/Week1-Exercises/greengrocer/greengrocer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week2-Execises/isPrimeNumber/isPrimeNumber.iml" filepath="$PROJECT_DIR$/Week2-Execises/isPrimeNumber/isPrimeNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/leapYear/leapYear.iml" filepath="$PROJECT_DIR$/Week1-Exercises/leapYear/leapYear.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/minMaxFinder/minMaxFinder.iml" filepath="$PROJECT_DIR$/Week1-Exercises/minMaxFinder/minMaxFinder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week2-Execises/powerCalc/powerCalc.iml" filepath="$PROJECT_DIR$/Week2-Execises/powerCalc/powerCalc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/primeNumberFinder/primeNumberFinder.iml" filepath="$PROJECT_DIR$/Week1-Exercises/primeNumberFinder/primeNumberFinder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/reverseStar/reverseStar.iml" filepath="$PROJECT_DIR$/Week1-Exercises/reverseStar/reverseStar.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/taksimeter/taksimeter.iml" filepath="$PROJECT_DIR$/Week1-Exercises/taksimeter/taksimeter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/typeCasting/typeCasting.iml" filepath="$PROJECT_DIR$/Week1-Exercises/typeCasting/typeCasting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Week1-Exercises/vatCalculator/vatCalculator.iml" filepath="$PROJECT_DIR$/Week1-Exercises/vatCalculator/vatCalculator.iml" />
+    </modules>
+  </component>
+</project>

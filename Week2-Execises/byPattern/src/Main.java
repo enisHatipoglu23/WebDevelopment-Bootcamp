@@ -17,6 +17,7 @@ public static void operateNumber(int currentNum, int originalNum) {
         System.out.println("Current Number: " + currentNum);
     }
 }
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
