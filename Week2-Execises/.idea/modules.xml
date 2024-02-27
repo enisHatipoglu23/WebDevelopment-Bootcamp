@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Week2-Execises.iml" filepath="$PROJECT_DIR$/.idea/Week2-Execises.iml" />
+      <module fileurl="file://$PROJECT_DIR$/byPattern/byPattern.iml" filepath="$PROJECT_DIR$/byPattern/byPattern.iml" />
+      <module fileurl="file://$PROJECT_DIR$/isPrimeNumber/isPrimeNumber.iml" filepath="$PROJECT_DIR$/isPrimeNumber/isPrimeNumber.iml" />
+      <module fileurl="file://$PROJECT_DIR$/powerCalc/powerCalc.iml" filepath="$PROJECT_DIR$/powerCalc/powerCalc.iml" />
+    </modules>
+  </component>
+</project>
