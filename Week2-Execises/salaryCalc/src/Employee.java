@@ -65,7 +65,7 @@ public class Employee {
         bonus();
         raiseSalary();
         this.salary += this.bonusAmount - this.taxAmount;
-        System.out.println("Total Salary :\t" + this.salary);
+        System.out.println("Total Salary :\t" + this.salary + " ₺ ");
 
     }
 }
