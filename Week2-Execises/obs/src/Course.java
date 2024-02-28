@@ -15,10 +15,11 @@ public class Course {
         this.note = 0;
         this.perfNote = 0;
         this.teacher = teacher;
-        this.result = note*0.8 + perfNote*0.2;
     }
-
-
+    double calcResult(){
+        this.result = (this.note*0.8) + this.perfNote*0.2;
+        return this.result;
+    }
     // teacher checker method
     void addTeacher(){
         if(teacher.branch.equals(this.prefix)){

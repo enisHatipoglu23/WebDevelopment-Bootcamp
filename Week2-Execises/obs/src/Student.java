@@ -38,13 +38,13 @@ public class Student {
     }
     // calculates average
     void calcAverage(){
-        this.average = ((course1.note+ course2.note+course3.note)*0.8 + (course1.perfNote+course2.perfNote+course3.perfNote)*0.2)/3;
+        this.average = ((course1.calcResult())+(course2.calcResult()) + (course3.calcResult()))/3;
     }
     // prints users exam info's and their average
     void printNote(){
-        System.out.println(course1.name + " Result's:\tExam: " + course1.note + "\tSpeaking: " + course1.perfNote + "\t Average of note's: " + (course1.note*0.8+course1.perfNote*0.2));
-        System.out.println(course2.name + " Result's:\tExam: " + course2.note + "\tSpeaking: " + course2.perfNote + "\t Average of note's: " + (course2.note*0.8+course2.perfNote*0.2));
-        System.out.println(course3.name + " Result's:\tExam: " + course3.note + "\tSpeaking: " + course3.perfNote + "\t Average of note's: " + (course3.note*0.8+course3.perfNote*0.2));
+        System.out.println(course1.name + " Result's:\tExam: " + course1.note + "\tSpeaking: " + course1.perfNote + "\t Average of note's: " + course1.calcResult());
+        System.out.println(course2.name + " Result's:\tExam: " + course2.note + "\tSpeaking: " + course2.perfNote + "\t Average of note's: " + course2.calcResult());
+        System.out.println(course3.name + " Result's:\tExam: " + course3.note + "\tSpeaking: " + course3.perfNote + "\t Average of note's: " + course3.calcResult());
     }
     // checks if average greater than pass note
     void isPass(){
