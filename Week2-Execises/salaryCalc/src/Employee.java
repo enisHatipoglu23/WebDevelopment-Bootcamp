@@ -13,12 +13,15 @@ public class Employee {
         this.recentYear = 2024;
     }
     double tax(){
+            double taxAmount = 0;
             if(this.salary > 0 && this.salary < 1000){
-                System.out.println(this.salary + "₺ no tax for this this amount of salary. "); return 0;
+                System.out.println(this.salary + "₺ no tax for this this amount of salary. ");return taxAmount;
             }else if(this.salary>1000){
-                return this.salary*0.03;
+                taxAmount = this.salary*0.03;
+            }else{
+                System.out.println("invalid input");
             }
-        System.out.println("Invalid input.\t Please try again. "); return tax();
+            return taxAmount;
     }
     // calculating bonus amount according to work hours.
     double bonus(){
@@ -44,10 +47,14 @@ public class Employee {
     }
     // printing results
     String toString(Employee employee){
-        System.out.println("Name :\t" + this.name + "\nWork Hours :\t" + this.workHours + "\nHire Year :\t" + this.hireYear);
-        System.out.println("Tax: " + this.tax() + "₺\tBonus: " + this.bonus() + "₺\tRaise: " + this.raiseSalary()+"₺");
-        this.salary += this.raiseSalary() + this.bonus() - this.tax();
-        System.out.println("Total Salary :\t" + this.salary + " ₺ ");
+        if(this.salary<=0){
+            System.out.println("Please enter a valid input. Salary can NOT be negative or zero. ");
+        }else{
+            System.out.println("Name :\t" + this.name + "\nWork Hours :\t" + this.workHours + "\nHire Year :\t" + this.hireYear);
+            System.out.println("Tax: " + this.tax() + "₺\tBonus: " + this.bonus() + "₺\tRaise: " + this.raiseSalary()+"₺");
+            this.salary += this.raiseSalary() + this.bonus() - this.tax();
+            System.out.println("Total Salary :\t" + this.salary + " ₺ ");
+        }
         return null;
     }
 }
