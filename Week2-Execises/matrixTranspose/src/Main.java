@@ -29,7 +29,6 @@ public class Main {
             System.out.println();
         }
         System.out.println("************");
-        // add numbers from base to transpose matrix according to the transpose rule
         System.out.println("TRANSPOSE");
         for (int i = 0; i < transpose.length; i++) {
             for (int j = 0; j < transpose[i].length; j++) {
@@ -38,8 +37,5 @@ public class Main {
             }
             System.out.println();
         }
-
-
-
     }
 }
