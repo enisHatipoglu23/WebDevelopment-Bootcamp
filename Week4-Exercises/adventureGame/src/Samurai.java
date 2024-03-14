@@ -1,6 +1,7 @@
-public class Samurai extends Characters{
-    private String name;
-    public Samurai(){
-        super("Samurai",5,21,15);
+public class Samurai extends GameChar {
+
+    public Samurai() {
+        super(1, "Samurai", 5, 21, 15);
     }
+
 }

@@ -1,14 +1,17 @@
-public class SafeHouse extends Location{
+
+public class SafeHouse extends NormalLoc{
+
     public SafeHouse(Player player) {
-        super(player, "Safe house", null, 0);
+        super(1, player, "Safe House ");
     }
 
-    @Override
-    boolean onLocation() {
-        System.out.println("o> you are in the safe house now.\trelax." +
-                "Health: " + player.getHealth() + "\t your health has been fulled. <o");
-        this.getPlayer().setHealth(this.getPlayer().getOriginalHealth());
 
+    @Override
+    public boolean onLocation() {
+        System.out.println("You're at Safe House. ");
+
+        this.getPlayer().setHealth(this.getPlayer().getOriginalHealth());
+        System.out.println("Your stamina has been fulled. " + this.getPlayer().getOriginalHealth());
         return true;
     }
 }

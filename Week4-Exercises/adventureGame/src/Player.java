@@ -1,141 +1,106 @@
+
+
 import java.util.Scanner;
 
 public class Player extends Game{
 
-    private String name;
+    private Inventory inventory;
+    private String locationt;
     private int damage;
     private int health;
+    private int money;
+    private String name;
     private int originalHealth;
-    private int coin;
-    private String charName;
-    Characters character;
-    Location location;
-    Scanner scanner = new Scanner(System.in);
+    Scanner input = new Scanner(System.in);
 
-    Player(){
+    public Player(){
 
     }
 
-    public Player(String name) {
+    public Player(String name){
         this.name = name;
+        this.inventory = new Inventory();
     }
-
     public void selectChar(){
-        System.out.println("Characters ↓ ");
-        Samurai samurai = new Samurai();
-        Archer archer = new Archer();
-        Knight knight = new Knight();
+        GameChar[] charshars = {new Samurai(), new Knight(), new Archer()};
 
-        Characters[] charactersList = {samurai, archer, knight};
-        int i = 1;
-        for (Characters list : charactersList){
-            System.out.println((i) + "." + list.getCharName() + " | damage: " + list.getDamage() + "\thealth: " +  list.getHealth() + "\tcoin: " + list.getCoin());
-            i++;
+        for (GameChar gameChar : charshars) {
+            System.out.println(gameChar.getId() + "- " + "Character : " + gameChar.getName() + " " + "Damage: " + gameChar.getDamage() + " " +
+                    "Health: " + gameChar.getHealth() + " " + "Money: " + gameChar.getMoney());
+
         }
-        System.out.println((i) + ". EXIT");
-        System.out.println("Select one: ");
 
-        int selection = scanner.nextInt();
-        switch (selection){
-            case 1:
-                System.out.println("You chose " + samurai.getCharName());
-                character = samurai;
-                match(character);
-                break;
-            case 2:
-                System.out.println("You chose " + archer.getCharName());
-                character = archer;
-                match(character);
-                break;
-            case 3:
-                System.out.println("You chose " + knight.getCharName());
-                character = knight;
-                match(character);
-                break;
-                case 4:
-                System.out.println("bye coward.");
-                break;
+        System.out.println("Please choose character ===> ");
 
+        int character = input.nextInt();
+        while(character < 1 || character > charshars.length){
+            System.out.println("Invalid value. ");
+            character = input.nextInt();
+        }
+        switch (character){
+            case 1 :
+                initPlayer(new Samurai());
+
+                break;
+            case 2 :
+                initPlayer(new Knight());
+                break;
+            case 3 :
+                initPlayer(new Archer());
+                break;
             default:
-                System.out.println("You entered a value outside the range.\nValue must be between 1-3");
-                selectChar();
+                initPlayer(new Samurai());
         }
-        System.out.println(this.getCharName() + " | damage = " + this.getDamage() + " | health = " +
-                this.getHealth() + " | coin = " + this.getCoin());
+        System.out.println("You choose: " + this.getName());
+    }
+    public void initPlayer(GameChar gameChar){
+        this.setName(gameChar.getName());
+        this.setDamage(gameChar.getDamage());
+        this.setOriginalHealth(gameChar.getHealth());
+        this.setHealth(gameChar.getHealth());
+        this.setMoney(gameChar.getMoney());
     }
 
-//    public void selectLocation(){
-//        Forest forest = new Forest(player);
-//        Ocean ocean = new Ocean(player);
-//        SafeHouse safeHouse = new SafeHouse(player);
-//        Location[] locations = {forest, ocean, safeHouse};
-//        int i = 1;
-//        for (Location loc : locations){
-//            System.out.println((i + ".\t" + loc.getName()));
-//            i++;
-//        }
-//        System.out.println((i + ". " + "Exit"));
-//        int selection = scanner.nextInt();
-//        switch (selection){
-//            case 1:
-//                System.out.println(forest.getName());
-//                this.location = forest;
-//                break;
-//            case 2:
-//                System.out.println(ocean.getName());
-//                this.location = ocean;
-//                break;
-//            case 3:
-//                System.out.println(safeHouse.getName());
-//                this.location = safeHouse;
-//                break;
-//            case 4:
-//                break;
-//            default:
-//                break;
-//        }
-//        this.location.onLocation();
+//    public void printPlayerInfo(){
+//        System.out.println("Silah: " + this.getInventory().getWeapon().getWeaponName() +
+//                ", Zırh: " + this.getInventory().getShield().getShieldName() +
+//                ", Hasar: " + this.getDamage() +
+//                ", Sağlık: " + this.getHealth() +
+//                ", Para: " + this.getMoney());
 //    }
 
-    public void combat(){
-        System.out.println("are you gonna <f>ight or <r>un (press f to fight - press r tu run)");
-        String selection = scanner.next();
-        if(selection.equalsIgnoreCase("f")){
-
-        }else if(selection.equalsIgnoreCase("r")){
-            System.out.println("haha coward.\twhere do you wanna go this time?");
-//            this.selectLocation();
-        }
+    public String getLocation() {
+        return locationt;
     }
 
-
-
-    public void match(Characters characters){
-        this.setCharName(this.getCharacter().getCharName());
-        this.setDamage(this.getCharacter().getDamage());
-        this.setHealth(this.getCharacter().getHealth());
-        this.setOriginalHealth(this.getCharacter().getHealth());
-        this.setCoin(this.getCharacter().getCoin());
-       }
-
-    public String getName() {
-        return name;
+    public void setLocation(String locationt) {
+        this.locationt = locationt;
     }
 
-
-    public void setName(String name) {
-        this.name = name;
+    public Inventory getInventory() {
+        return inventory;
     }
 
-    public int getDamage() {
-        return damage;
-    }
+//    public void setInventory(Inventory inventory) {
+//        this.inventory = inventory;
+//    }
+
+   public int getTotalDamage(){
+       return damage + this.getInventory().getWeapon().getWeaponDamage();
+   }
+
+//    public int getDamage() {
+//        return damage;
+//    }
 
     public void setDamage(int damage) {
         this.damage = damage;
     }
 
     public int getHealth() {
+        if (health < 0){
+            health = 0;
+        }
         return health;
     }
 
@@ -143,28 +108,28 @@ public class Player extends Game{
         this.health = health;
     }
 
-    public int getCoin() {
-        return coin;
+    public int getMoney() {
+        return money;
     }
 
-    public String getCharName() {
-        return charName;
+    public void setMoney(int money) {
+        this.money = money;
     }
 
-    public void setCharName(String charName) {
-        this.charName = charName;
+    public String getName() {
+        return name;
     }
 
-    public void setCoin(int coin) {
-        this.coin = coin;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Characters getCharacter() {
-        return character;
+    public Weapon getWeapon(){
+        return this.getInventory().getWeapon();
     }
 
-    public void setCharacter(Characters character) {
-        this.character = character;
+    public Shield getShield(){
+        return this.getInventory().getShield();
     }
 
     public int getOriginalHealth() {
@@ -174,47 +139,4 @@ public class Player extends Game{
     public void setOriginalHealth(int originalHealth) {
         this.originalHealth = originalHealth;
     }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

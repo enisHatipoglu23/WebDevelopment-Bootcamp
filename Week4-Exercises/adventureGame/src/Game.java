@@ -1,100 +1,88 @@
+
 import java.util.Scanner;
 
 public class Game {
-    private String name;
-    Location location = null;
-    Scanner scanner = new Scanner(System.in);
-    public void start(){
-        slowMotion("..........|WELCOME|..........",4);
-        slowMotion("\no> how about some adventure ?\ndon't be afraid, go ahead. <o",4);
-        while(true){
-            slowMotion("\no> what is your name ? <o (if you're a coward, type i'm coward and go.) ↓\n", 4);
+    Scanner input = new Scanner(System.in);
 
-            name = scanner.nextLine();
-            if(name.equalsIgnoreCase("i'm coward")){
-                System.out.println("bye coward."); break;
+    public void start() {
+        this.slowMotion("the Adventure game has been started!\n",30);
+        this.slowMotion("please input your username down there: \n",30);
+
+        String userName = input.nextLine();
+
+        Player player = new Player(userName);
+
+        this.slowMotion("welcome to the adventure Game " + userName + "\n",30);
+
+        player.selectChar();
+        Location location = null;
+        while (true) {
+
+            Location[] normalLocs = {new SafeHouse(player), new ToolStore(player) {
+            }};
+            slowMotion("locations: ",60);
+            int count = 1;
+            for (Location locChar : normalLocs) {
+                slowMotion(count + "- " + locChar.getLocationName()+"\n",60);
+//                System.out.println(count + "- " + locChar.getLocationName());
+                count++;
+            }
+            BattleLoc[] battleLocs = {new Cave(player), new Woods(player), new River(player), new Maden(player)};
+            int count2 = 3;
+            for (BattleLoc battleChar : battleLocs) {
+                System.out.println(count2 + "- " + battleChar.getLocationName() + " reward= " + battleChar.getAward());
+                count2++;
+            }
+            System.out.println("to exit ==> 0");
+            System.out.println("choose  location => ");
+
+            int locChoose = input.nextInt();
+            while (locChoose < 0 || locChoose > (normalLocs.length + battleLocs.length)) {
+                System.out.println("invalid value. ");
+                locChoose = input.nextInt();
             }
 
-            Player player = new Player(name);
-            System.out.println("\no> hi " + player.getName() + " <o");
-            System.out.println("\no> time to chose your player. <o");
-            player.selectChar();
 
-            player =;
-            slowMotion("where do u wanna go?\n",25);
-            Forest forest = new Forest(player);
-            Ocean ocean = new Ocean(player);
-            SafeHouse safeHouse = new SafeHouse(player);
-            Location[] locations = {forest, ocean, safeHouse};
-            int i = 1;
-            for (Location loc : locations){
-                System.out.println((i + ".\t" + loc.getName()));
-                i++;
-            }
-            System.out.println((i + ". " + "Exit"));
-            int selection = scanner.nextInt();
-            switch (selection){
+            switch (locChoose) {
+                case 0:
+                    location = null;
+                    break;
                 case 1:
-                    System.out.println(forest.getName());
-                    this.location = forest;
+                    location = new SafeHouse(player);
                     break;
                 case 2:
-                    System.out.println(ocean.getName());
-                    this.location = ocean;
+                    location = new ToolStore(player);
                     break;
                 case 3:
-                    System.out.println(safeHouse.getName());
-                    this.location = safeHouse;
+                    location = new Cave(player);
                     break;
                 case 4:
+                    location = new Woods(player);
+                    break;
+                case 5:
+                    location = new River(player);
+                    break;
+                case 6:
+                    location = new Maden(player);
                     break;
                 default:
-                    break;
+                    System.out.println("choose one of our sections. ");
             }
-            this.location.onLocation();
-            player.combat();
-        }
+            if (location == null) {
+                System.out.println("bye ");
+                break;
+            }
+            if (location.onLocation() == false) {
+                System.out.println("***");
+                break;
 
+            }
+        }
     }
-
-        public void selectLocation(){
-        Player player=null;
-        Forest forest = new Forest(player);
-        Ocean ocean = new Ocean(player);
-        SafeHouse safeHouse = new SafeHouse(player);
-        Location[] locations = {forest, ocean, safeHouse};
-        int i = 1;
-        for (Location loc : locations){
-            System.out.println((i + ".\t" + loc.getName()));
-            i++;
-        }
-        System.out.println((i + ". " + "Exit"));
-        int selection = scanner.nextInt();
-        switch (selection){
-            case 1:
-                System.out.println(forest.getName());
-                this.location = forest;
-                break;
-            case 2:
-                System.out.println(ocean.getName());
-                this.location = ocean;
-                break;
-            case 3:
-                System.out.println(safeHouse.getName());
-                this.location = safeHouse;
-                break;
-            case 4:
-                break;
-            default:
-                break;
-        }
-        this.location.onLocation();
-    }
-
     public void slowMotion(String text, int speed){
-        try{
-            for (char letter : text.toCharArray()){
-                System.out.print(letter);
+        try {
+            for (int i = 0; i<text.length();i++){
+                System.out.print(text.charAt(i));
                 Thread.sleep(speed);
             }
         }catch(InterruptedException e){
@@ -102,3 +90,6 @@ public class Game {
         }
     }
 }
+
+
+
