@@ -26,6 +26,8 @@ public class Main {
             preparedStatement.setInt(3,99000);
             preparedStatement.executeUpdate();
 
+            preparedStatement.close();
+
         }catch (SQLException e ){
             System.out.println(e.getMessage());
         }
