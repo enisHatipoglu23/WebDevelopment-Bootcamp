@@ -5,8 +5,8 @@ public class Game {
     Scanner input = new Scanner(System.in);
 
     public void start() {
-        this.slowMotion("the Adventure game has been started!\n",30);
-        this.slowMotion("please input your username down there: \n",30);
+        this.slowMotion("the Adventure game has been started!\n",100);
+        this.slowMotion("please input your username down there ↓ \n",80);
 
         String userName = input.nextLine();
 
@@ -20,11 +20,10 @@ public class Game {
 
             Location[] normalLocs = {new SafeHouse(player), new ToolStore(player) {
             }};
-            slowMotion("locations: ",60);
+            slowMotion("locations:\n",60);
             int count = 1;
             for (Location locChar : normalLocs) {
                 slowMotion(count + "- " + locChar.getLocationName()+"\n",60);
-//                System.out.println(count + "- " + locChar.getLocationName());
                 count++;
             }
             BattleLoc[] battleLocs = {new Cave(player), new Woods(player), new River(player), new Maden(player)};

@@ -17,6 +17,7 @@ public class Book implements Comparable<Book>{
             return Integer.compare(this.getPageNumber(), o.getPageNumber());
         }
     }
+
     @Override
     public String toString() {
         return "Book{" +
