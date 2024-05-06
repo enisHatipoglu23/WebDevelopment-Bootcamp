@@ -22,7 +22,7 @@ public class Book {
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name="book_autor_id", referencedColumnName = "autor_id")
-    private Autor autor;
+    private Author author;
 
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
@@ -75,11 +75,11 @@ public class Book {
         this.stock = stock;
     }
 
-    public Autor getAutor() {
-        return autor;
+    public Author getAutor() {
+        return author;
     }
 
-    public void setAutor(Autor autor) {
-        this.autor = autor;
+    public void setAutor(Author author) {
+        this.author = author;
     }
 }

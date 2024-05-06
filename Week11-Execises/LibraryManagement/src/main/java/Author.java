@@ -5,7 +5,7 @@ import java.util.List;
 
 @Entity
 @Table(name="autors")
-public class Autor {
+public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "autor_id", columnDefinition = "serial")
@@ -20,11 +20,11 @@ public class Autor {
     @Column(name = "autor_country", nullable = false)
     private String country;
 
-    @OneToMany(mappedBy = "autor")
+    @OneToMany(mappedBy = "author")
     private List<Book> bookList;
 
 
-    public Autor() {
+    public Author() {
     }
 
     public long getId() {
