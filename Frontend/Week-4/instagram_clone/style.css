@@ -1,0 +1,62 @@
+.logo {
+    margin-left: 192px;
+}
+.icon-large {
+font-size: 1.7em; 
+}
+.collapse {
+    justify-content: center;
+    margin-right: 172px;
+}  
+
+.navbar {
+    height : 54px;
+}
+
+.story-images {
+    height: 70px;
+    width: auto;
+}
+
+.storyname {
+    justify-content: center;
+    font-size: x-small;
+    text-align: center;
+    margin-left: 0px;
+}
+
+.card-top {
+    display: flex;
+    align-items: center;
+    height: auto;
+    width: 50%;
+}
+
+.image-card-top {
+    height: auto;
+    width: 50px;
+}
+
+.card-font-size {
+    font-size: 15px;
+}
+
+.list-group-item {
+    border:none;
+    text-align: center;
+}
+.card {
+    max-width:540px;
+    margin: auto;
+}
+.image-center {
+    max-width:540px;
+    display: flex;
+    height: auto;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+.list-group {
+border-bottom: 1px solid #ddd; /* Liste elemanlarının altına yatay bir border ekleyin */
+}
+
